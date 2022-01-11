@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 const config = require('config');
 
-const db = config.get('mongoURI')
-const connectDB = () => {
-  mongoose
-    .connect(db)
-    .then(() => {
-      console.log(`Connected to DB`);
-    })
-    .catch((err) => {
-      console.log(`DB`, db);
-      console.error(err.message);
-      process.exit(1);
-    });
+const db = config.get('mongoURI');
+const connectDB = async () => {
+  try {
+    await mongoose.connect(db);
+    console.log(`Connected to DB`);
+  } catch (error) {
+    console.error(error.message);
+    process.exit(1);
+  }
 };
 module.exports = connectDB;
