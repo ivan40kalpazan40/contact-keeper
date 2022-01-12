@@ -128,3 +128,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# react related
+/client/build
+
+.DS_Store
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
