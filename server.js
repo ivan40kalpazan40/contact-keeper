@@ -10,6 +10,5 @@ connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
-
 app.use(routes);
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}....`));
