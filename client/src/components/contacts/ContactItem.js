@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
-  const { deleteContact } = contactContext;
+  const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
   const onDeleteContact = (e) => {
     deleteContact(contact.id);
+    clearCurrent();
   };
 
   return (
@@ -40,7 +41,12 @@ const ContactItem = ({ contact }) => {
         )}
       </ul>
       <p>
-        <button className='btn btn-dark btn-sm'>Edit</button>
+        <button
+          className='btn btn-dark btn-sm'
+          onClick={() => setCurrent(contact)}
+        >
+          Edit
+        </button>
         <button className='btn btn-danger btn-sm' onClick={onDeleteContact}>
           Delete
         </button>
