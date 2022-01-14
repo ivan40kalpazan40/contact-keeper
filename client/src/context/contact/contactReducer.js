@@ -1,5 +1,6 @@
 import {
   ADD_CONTACT,
+  UPDATE_CONTACT,
   DELETE_CONTACT,
   SET_CURRENT,
   CLEAR_CURRENT,
@@ -9,6 +10,14 @@ const contactReducer = (state, action) => {
   switch (action.type) {
     case ADD_CONTACT:
       return { ...state, contacts: [...state.contacts, action.payload] };
+    case UPDATE_CONTACT:
+      return {
+        ...state,
+        contacts: state.contacts.map((x) => {
+          if (x.id === action.payload.id) return action.payload;
+          return x;
+        }),
+      };
     case DELETE_CONTACT:
       return {
         ...state,
