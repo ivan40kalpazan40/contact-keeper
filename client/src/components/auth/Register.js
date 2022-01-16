@@ -7,7 +7,7 @@ const Register = (props) => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
-  const { alerts, setAlert } = alertContext;
+  const { setAlert } = alertContext;
   const { register, error, clearErrors, isAuthenticated } = authContext;
   const navigate = useNavigate();
   useEffect(() => {
