@@ -53,7 +53,6 @@ const AuthState = (props) => {
     }
   };
   // Login User
-  // Logout
   const login = async (formData) => {
     const config = {
       headers: { 'Content-Type': 'application/json' },
@@ -66,6 +65,8 @@ const AuthState = (props) => {
       dispatch({ type: LOGIN_FAIL, payload: err.response.data.msg });
     }
   };
+  // Logout
+  const logout = () => dispatch({ type: LOGOUT });
   // Clear Errors
   const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
   return (
@@ -77,6 +78,7 @@ const AuthState = (props) => {
         user: state.user,
         error: state.error,
         login,
+        logout,
         register,
         clearErrors,
         loadUser,
