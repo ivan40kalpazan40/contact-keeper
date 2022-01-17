@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://ivan:1234@contactkeeper.bip9r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "xZ$]/Z=kDYfx]S.n}V%n):(CbKBpbvHKENG?>*CQYsKF'WTa.qPb<[w]-u!gEKbD)Z5beT@T7w92]R3;hg4,+3:98$`J_@EV+yJg!n.E8x&{w#t)xMvMt+^6v@/FeMT~"
+}
